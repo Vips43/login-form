@@ -12,10 +12,9 @@ body{
     height: 100vh;
 }
 form{
-    
     width: fit-content;
-    display: none;
-    background-color: rgb(14, 66, 66);
+    display: flex;
+    background-color: rgb(178, 182, 182);
     padding: 1rem;
     gap: 50px;
     border-radius: 6%;
@@ -30,33 +29,52 @@ form .signUp, .login{
     max-width: 500px;
     max-height: 500px;
 }
-form .signUp .box, .login .box{
-    display: flex;    
-    flex-direction: column;
-}
 form .login{
     margin-top: 20%;
     transition: display .5s;
+    position: relative;
+    gap: 15px;
+    h3{
+        position: absolute;
+        top: -50px;
+        left: 70px;
+    }
 }
-form .signUp{
-    max-width: 0;
-    overflow: hidden;
-    max-height: 0;
+form .signUp .box, .login .box{
+    display: flex;    
+    flex-direction: column;
+    position: relative;
 }
-form .login .loginBtn{
 
-}
-form .signUp input, .login .box input{
-    font-size: 1rem;
+.signUp .box input, .login .box input{
     padding: 5px;
+    height: 40px;
+    width: 100%;
     outline: none;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px rgb(34, 44, 78);
+    background: transparent;
+    /* border-radius: 10px; */
+    border: none;
+    border-bottom: 1px solid black;
+}
+.box label{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:10px;
+    font-size: .9rem;
+    color: black;
+    background-color: transparent;
+    transition: all .2s;
+}
+.box input:focus ~label{
+    top: -1px;
+}
+.box input:valid ~label{
+    top: -1px;
 }
 input[type = "submit"]{
-    background-color: rgb(23, 70, 23);
+    background-color: rgb(14, 71, 14);
 }
-
 .signBtn{
     width: fit-content;
     padding: 5px;
