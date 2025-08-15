@@ -31,6 +31,7 @@ form {
   flex-direction: column;
   gap: 15px;
   padding: 20px;
+  position: relative;
 }
 
 .signup-form h2 {
@@ -142,6 +143,7 @@ input[type="button"]:hover {
     align-items: center;
     gap: 10px;
     background-color: white;
+    position: relative;
 }
 #loginbtn{
     background-color: #253900;
@@ -161,8 +163,7 @@ input[type="button"]:hover {
     z-index: 1;
     transform: translateX(-50%);
     background-color: #064232;
-    border-bottom-right-radius: 180px;
-    border-top-right-radius: 0%;
+    border-radius: 215px;
     display: flex;
     align-items: center;
     padding: 10rem;
@@ -177,9 +178,51 @@ input[type="button"]:hover {
     transform: translateY(-100%);
     transform: translateX(50%);
     justify-content: flex-start;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 180px;
     background-color: #3E0703;
 }
 /*toggle div design*/
 
+.signup-form::before,.signup-form::after,
+.login-form::before,.login-form::after{
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  z-index: 2;
+  color: white;
+  display: flex;
+  justify-content: center;
+  transition: all .5s ease;
+}
+.signup-form::after,.login-form::after{
+  content: 'Sign';
+  top: 0;
+  left: 0;
+  align-items: end;
+  background-color: #3E0703;
+
+}
+.signup-form::before{
+  content: 'up';
+  bottom: 0;
+  left: 0;
+  background-color: #3E0703;
+}
+.login-form::before{
+  content: 'in';
+  bottom: 0;
+  right: 0;
+  background-color: #064232;
+}
+.login-form::after{
+  content: 'Log';
+  top: 0;
+  right: 0;
+  background-color: #064232;
+}
+.signup-form:hover::before,.login-form:hover::before{
+  transform: translateY(100%);
+}
+.signup-form:hover::after,.login-form:hover::after{
+  transform: translateY(-100%);
+}
