@@ -1,86 +1,182 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
+
+body {
+  font-family: sans-serif;
+}
+
+form {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 50px;
+  display: flex;
+  position: relative;
+  border: 5px solid;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.signup-form {
+  width: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.signup-form h2 {
+  text-align: center;
+}
+
+.input-container {
+  position: relative;
+  width: 250px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 35px 12px 8px;
+  font-size: 16px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  outline: none;
+  background: transparent;
+}
+
+/* Floating label */
+label:not(.eye) {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  color: #777;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s ease;
+  padding: 0 4px;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #4a90e2;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 6px;
+  font-size: 12px;
+  color: #4a90e2;
+}
+
+/* Eye toggle */
+.eye-toggle {
+  display: none;
+}
+
+.eye-t {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.fa-eye, .fa-eye-slash{
+    font-size: 18px;
+}
+
+/* Hide eye-slash by default */
+.eye .fa-eye-slash {
+  display: none;  
+}
+
+/* When checkbox is checked, swap icons */
+.eye-toggle:checked + .eye .fa-eye {
+  display: none;
+}
+.eye-toggle:checked + .eye .fa-eye-slash {
+  display: flex;
+  color: grey;
+}
+
+/* Button styles */
+.button-container {
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
 }
-form{
-    width: fit-content;
-    display: flex;
-    background-color: rgb(178, 182, 182);
-    padding: 1rem;
-    gap: 50px;
-    border-radius: 6%;
-    transition: max-height .5s, max-width .5s ;
-}
-form .signUp, .login{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+input[type="button"] {
+    width: 150px;
+    background-color: #3E0703;
+    border: 1px solid #3E0703;
     color: white;
-    transition: display .5s;
-    max-width: 500px;
-    max-height: 500px;
-}
-form .login{
-    margin-top: 20%;
-    transition: display .5s;
-    position: relative;
-    gap: 15px;
-    h3{
-        position: absolute;
-        top: -50px;
-        left: 70px;
-    }
-}
-form .signUp .box, .login .box{
-    display: flex;    
-    flex-direction: column;
-    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    transition: color .3s ease;
 }
 
-.signUp .box input, .login .box input{
-    padding: 5px;
-    height: 40px;
-    width: 100%;
-    outline: none;
-    background: transparent;
-    /* border-radius: 10px; */
-    border: none;
-    border-bottom: 1px solid black;
-}
-.box label{
-    position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-    left:10px;
-    font-size: .9rem;
-    color: black;
+input[type="button"]:hover {
     background-color: transparent;
-    transition: all .2s;
+    border: 2px solid #3E0703;
+    color: #3E0703;
+    font-weight: 700;
 }
-.box input:focus ~ label, .box input:valid ~ label{
-    top: -1px;
+/* Button styles */
+
+
+/*login form design starts*/
+.login-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+}
+#loginbtn{
+    background-color: #253900;
+}
+#loginbtn:hover{
+    background-color: transparent;
+    border: 2px solid #253900;
+    color: #253900;
+}
+/*login form design ends*/
+
+/*toggle div design*/
+.toggle-div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transform: translateX(-50%);
+    background-color: #064232;
+    border-bottom-right-radius: 180px;
+    border-top-right-radius: 0%;
+    display: flex;
+    align-items: center;
+    padding: 10rem;
+    justify-content: end;
+    transition: all .5s linear;
+}
+.toggle-div{
+    color: white;
 }
 
- input[type = 'text']:valid{
-    border-color: rgb(128, 0, 0);
- }
-input[type = "submit"]{
-    background-color: rgb(14, 71, 14);
+.toggle-div.cover{
+    transform: translateY(-100%);
+    transform: translateX(50%);
+    justify-content: flex-start;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 180px;
+    background-color: #3E0703;
 }
-.signBtn{
-    width: fit-content;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    background-color: bisque;
-}
+/*toggle div design*/
 

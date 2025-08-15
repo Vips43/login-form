@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Log in form</title>
 </head>
+
 <body>
-    <form action="">
-        <div class="signUp">
-            <h3 style="text-align: center;">Sign Up</h3>
-            <div class="box">
-                <input type="text" id="fname" />
-                <label for="fname" class="label">First name</label>
+
+
+    <form id="form">
+        <div class="signup-form">
+            <h2>Sign up</h2>
+
+            <div class="input-container">
+                <input type="text" id="fname" placeholder="">
+                <label for="fname">Enter Name</label>
             </div>
 
-            <div class="box">
-                <input type="text" id="lname" />
-                <label for="lname" class="label">Last name</label>
-            </div>
-            
-            <div class="box">
-                <input type="text" id="email">
-                <label for="email" class="label">Email</label>    
+            <div class="input-container">
+                <input type="text" id="lname" placeholder="">
+                <label for="lname">Enter Last Name</label>
             </div>
 
-            <div class="box">
-                <input type="password" id="pass">
-                <label for="pass" class="label">Password  </label>
+            <div class="input-container">
+                <input type="tel" id="phone" placeholder="">
+                <label for="phone">Enter Number</label>
             </div>
-            
-            <div class="box">
-                <input type="password" id="cpass">
-                <label for="cpass" class="label">Confirm password  </label>
+
+            <div class="input-container">
+                <input type="email" id="mail" placeholder="">
+                <label for="mail">Enter Email</label>
             </div>
-            
-            <div class="box">
-                <input type="tel" name="" id="number">
-                <label for="number" class="label">Phone number  </label>
+
+            <!-- Password field -->
+            <div class="input-container">
+                <input type="password" id="pass" placeholder="">
+                <label for="pass">Enter Password</label>
+                <div class="eye-t">
+                    <input type="checkbox" id="eye1" class="eye-toggle">
+                    <label for="eye1" class="eye">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </label>
+                </div>
             </div>
-            
-            <div class="box">
-                <input type="submit" value="Submit">
+
+            <!-- Confirm password field -->
+            <div class="input-container">
+                <input type="password" id="apass" placeholder="">
+                <label for="apass">Confirm Password</label>
+                <div class="eye-t">
+                    <input type="checkbox" id="eye2" class="eye-toggle">
+                    <label for="eye2" class="eye">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </label>
+                </div>
             </div>
-            <div class="box1">
-                <input type="button" value="Log In">
+
+            <div class="button-container">
+                <input type="button" value="Sign up">
             </div>
         </div>
-        <div class="login">
-            <h3 style="text-align: center;">Log In</h3>
-            <div class="box">
-                <input type="text" name="" id="id">
-                <label for="id" class="label">Email/User ID</label>    
+        <!-- sign form ends -->
+        <div class="toggle-div">
+            <h2 class="c1">Sign Up</h2>
+        </div>
+
+        <!-- login form starts-->
+        <div class="login-form">
+            <h2 style="margin: 1rem 0;">Log In</h2>
+            <div class="input-container">
+                <input type="email" id="maill" placeholder="">
+                <label for="maill">Enter Email</label>
             </div>
 
-            <div class="box">
-                <input type="password" name="" id="Lpass">
-                <label for="Lpass" class="label">Password</label>                
+            <!-- Password field -->
+            <div class="input-container">
+                <input type="password" id="passs" placeholder="">
+                <label for="passs">Enter Password</label>
+                <div class="eye-t">
+                    <input type="checkbox" id="eye3" class="eye-toggle">
+                    <label for="eye3" class="eye">
+                        <i class="fa-solid fa-eye"></i>
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </label>
+                </div>
             </div>
-            <div class="box loginBtn">
-                <input type="button" id="loginBtn" value="Log In">
+            <div class="button-container">
+                <input type="button" id="loginbtn" value="Log In">
             </div>
-            <input type="button" value="signUp" class="signBtn">
+
         </div>
+        <!-- login form ends-->
+
     </form>
+<script src="script.js"></script>
 </body>
+
 </html>
